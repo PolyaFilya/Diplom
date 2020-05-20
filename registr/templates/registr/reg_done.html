@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>You are registered!</title>
+  </head>
+  <body>
+    <p>{{first_name}}, вы зареганы успешно на мероприятие {{ event.event_name }}</p>
+    <p><a href="{% url 'qr' user.id %}">Сохраните</a> свой QR-код, он понадобится вам для прохождения на мероприятие</p>
+    <img src="{% url 'qr' user.id %}" alt="QR">
+    <p>Мероприятие будет проходить {{ event.event_date }} по адресу {{ event.address }}</p>
+    <a href="{% url 'index' %}">Вернуться обратно</a>
+  </body>
+</html>

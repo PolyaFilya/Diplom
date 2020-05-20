@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New user</title>
+  </head>
+  <body>
+    <p>Введите данные User of {{ user_id }}.</p>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <form action="{% url 'new_user' user_id %}" method="POST">
+      {% csrf_token %}
+      <input type="hidden" name="event_id" value="1">
+      <label>
+        Имя <input type="text" name="name">
+      </label>
+      <br>
+      <p>Выберите пол</p>
+      <label>
+        <input type="radio" name="gender" value="female" id="female">
+        Женский
+      </label>
+      <br>
+      <label>
+        <input type="radio" name="gender" value="male" id="male"> 
+        Мужской
+      </label>
+      <br>
+      <label>
+        Email <input type="text" name="email">
+      </label>
+      <br>
+      <label>
+        Возраст <input type="text" name="age">
+      </label>
+      <br>
+      <input type="submit" value="Получить код">
+    </form>
+  </body>
+</html>

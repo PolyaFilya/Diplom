@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home page</title>
+  </head>
+  <body>
+    {% if event_list %}
+      <p>Прив, выбери мероприятие:</p>
+      <ul>
+      {% for event in event_list %}
+          <li><a href="{% url 'choice' event.id %}">{{ event.event_name }}</a></li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No polls are available.</p>
+    {% endif %}
+  </body>
+</html>

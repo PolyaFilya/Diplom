@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Scanning QR-code</title>
+  </head>
+  <body>
+    <p>Вы хотите пройти на мероприятие {{ event.event_name }}</p>
+    <p>Для этого отсканируйте сохраненный при регистрации QR-код</p>
+    <!--тут типа должен быть сканер qr -->
+    <form enctype="multipart/form-data" action="{% url 'scan' event.id %}" method="post">
+      {% csrf_token %}
+      {{ form }}
+      <input type="submit" value="Submit">
+  </form>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+  </body>
+</html>

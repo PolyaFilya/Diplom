@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Choice</title>
+  </head>
+  <body>
+    <p>Вы хотите зарегаться на мероприятие {{ event_name }}</p>
+    <ul>
+        <li><a href="{% url 'new_user' event_id %}">Получить QR</a></li>
+        <li><a href="{% url 'scan' event_id %}">Отсканировать</a></li>
+    </ul>
+  </body>
+</html>
