@@ -4,3 +4,5 @@ import qreader
 
 class QRForm(forms.Form):
     file = forms.ImageField()
+
+

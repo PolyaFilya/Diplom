@@ -3,13 +3,14 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.utils import timezone
 from django.core.files.uploadedfile import SimpleUploadedFile
+from urllib.request import urlopen
 
 
 import cv2
 import qreader
 from .qr import make_qr_code
 
-from .models import User, Event, State
+from .models import User, Event, State, QR
 from .forms import QRForm
 
 def index(request):
@@ -64,9 +65,14 @@ def scan(request, event_id):
         form = QRForm(request.POST, request.FILES)
         if form.is_valid():
             #тут должна быть выгрузка файла из формы 
-            img = request.FILES
-            user_id = qreader.read(img)
-            return HttpResponseRedirect(reverse('user_here', args=(user_id)))
+            qr = QR()
+            qr.file = form.cleaned_data["file"]
+            qr.file.save('qr.png', content=qr.file, save=True)
+            user_id = qreader.read('registr/files/qrs/qr.png')
+            user = User.objects.get(pk=user_id)
+            user.state_set.create(name_state="here", user_id=user.id, reg_time=timezone.now())
+            qr.delete()
+            return HttpResponseRedirect(reverse('user_here', args=(user_id, )))
     else:
         form = QRForm()
 

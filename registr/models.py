@@ -25,3 +25,6 @@ class State(models.Model):
     reg_time = models.DateTimeField(auto_now_add = True)    
     def __str__(self):
         return self.name_state
+
+class QR(models.Model):
+    file = models.ImageField(upload_to = 'qrs')

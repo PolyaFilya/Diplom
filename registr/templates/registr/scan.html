@@ -10,7 +10,7 @@
     <!--тут типа должен быть сканер qr -->
     <form enctype="multipart/form-data" action="{% url 'scan' event.id %}" method="post">
       {% csrf_token %}
-      {{ form }}
+      {{ form.file }}
       <input type="submit" value="Submit">
   </form>
     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
