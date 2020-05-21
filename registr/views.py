@@ -71,7 +71,7 @@ def scan(request, event_id):
             user_id = qreader.read('registr/files/qrs/qr.png')
             user = User.objects.get(pk=user_id)
             user.state_set.create(name_state="here", user_id=user.id, reg_time=timezone.now())
-            qr.delete()
+            qr.file.delete()
             return HttpResponseRedirect(reverse('user_here', args=(user_id, )))
     else:
         form = QRForm()
