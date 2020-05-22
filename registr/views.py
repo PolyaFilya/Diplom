@@ -2,13 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.utils import timezone
-from django.core.files.uploadedfile import SimpleUploadedFile
-from urllib.request import urlopen
 
-
-import cv2
-import qreader
 from .qr import make_qr_code
+from .scanner import scanner
 
 from .models import User, Event, State, QR
 from .forms import QRForm
@@ -68,7 +64,7 @@ def scan(request, event_id):
             qr = QR()
             qr.file = form.cleaned_data["file"]
             qr.file.save('qr.png', content=qr.file, save=True)
-            user_id = qreader.read('registr/files/qrs/qr.png')
+            user_id = scanner('registr/files/qrs/qr.png')
             user = User.objects.get(pk=user_id)
             user.state_set.create(name_state="here", user_id=user.id, reg_time=timezone.now())
             qr.file.delete()
