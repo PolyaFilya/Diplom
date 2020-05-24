@@ -3,37 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>New user</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'registr/css/new_user.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>
-    <p>Введите данные User of {{ user_id }}.</p>
-    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-    <form action="{% url 'new_user' user_id %}" method="POST">
-      {% csrf_token %}
-      <input type="hidden" name="event_id" value="1">
-      <label>
-        Имя <input type="text" name="name">
-      </label>
-      <br>
-      <p>Выберите пол</p>
-      <label>
-        <input type="radio" name="gender" value="female" id="female">
-        Женский
-      </label>
-      <br>
-      <label>
+    <div class="rectangle">
+      <h1>Регистрация</h1>
+      <h2>Введите свои данные</h2>
+      <p class="attention">Все поля обязательны для заполнения!</p>
+      <div class="form">
+      <form action="{% url 'new_user' event.id %}" method="POST" id="data">
+        {% csrf_token %}
+        <p><input type="text" name="name" placeholder="Ваше имя" required></p>
+        <p class="choice">Выберите пол:</p>
+        <input type="radio" name="gender" value="female" id="female" checked>
+        <label for="female">Женский</label>
         <input type="radio" name="gender" value="male" id="male"> 
-        Мужской
-      </label>
-      <br>
-      <label>
-        Email <input type="text" name="email">
-      </label>
-      <br>
-      <label>
-        Возраст <input type="text" name="age">
-      </label>
-      <br>
-      <input type="submit" value="Получить код">
-    </form>
+        <label for="male">Мужской</label>
+        <p><input type="email" name="email" placeholder="E-mail" required></p>
+        <p><input type="text" name="age" placeholder="Ваш возраст" required></p>
+        <input type="checkbox" name="can" id="can" required>
+        <label for="can" class="can">Разрешить обработку личных данных</label>
+      </form>
+      </div>
+      <p class="button"><input type="submit" value="Зарегистрироваться на мероприятие" form="data"></p>
+    </div>
   </body>
 </html>

@@ -1,0 +1,159 @@
+h1, h2, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    }
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #FDDE64 url(image/New_user.png) no-repeat;
+    background-size: cover;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+    line-height: 100%;
+}
+
+.rectangle {
+    display: block;
+    width: 100%;
+    max-width: 83%;
+    height: 600px;
+    max-height: 100%;
+    margin: 5% auto;
+    background: #FFFEE6;
+    padding: 100px auto;
+}
+
+h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3em;
+    line-height: 1.5em;
+
+    text-align: center;
+
+    color: #333433;
+
+    padding-top: 2%;
+}
+
+h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5em;
+    line-height: 1em;
+    text-align: center;
+
+    color: #252827;
+
+    margin-bottom: 1.5%;
+}
+
+.form {
+    display: block;
+    float: left;
+    width: 100%;
+    max-width: 40%;
+    margin-top: 3%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 4px solid #FDDE64;
+    box-sizing: border-box;
+    margin-left: 5%;
+    margin-top: 0;
+}
+
+.attention{
+    display: inline-block;
+    margin-top: 12.5%;
+    font-size: 1.8em;
+    line-height: 0.8em;
+    text-align: center;
+    width: 40%;
+    word-wrap: break-word;
+    margin-left: 7%;
+}
+
+.button {
+    margin-top: 13%;
+    text-align: center;
+}
+
+form input {
+    display: block;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.choice {
+    margin-left: 5%;
+    font-size: 1.3em;
+    line-height: 1em;
+    text-align: left;
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+input[type='radio'] {
+    display: inline;
+}
+form label {
+    font-size: 1em;
+    line-height: 1em;
+    word-wrap: break-word;
+}
+
+input[type='text'], input[type='email'] {
+    border: none;
+    border-bottom: 2px solid #60615B;
+    height: 30px;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 1em;
+    margin-bottom: 4%;
+}
+
+input[type='submit'] {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.1em;
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    word-wrap: break-word;
+
+    color: #1C1D1F;
+    background: rgba(252, 214, 67, 0.9);
+
+    width: 30%;
+    height: 70px;
+    margin: 0 auto;
+    padding: 1px auto;
+    border: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+input[type='submit']:hover {
+    text-decoration: underline;
+}
+
+
+input[type='checkbox'] {
+    display: inline;
+    margin-top: 8%;
+    margin-bottom: 3%;
+}
+.can {
+    margin-left: 2%;
+}

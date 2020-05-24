@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Scanning QR-code</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'registr/css/scan.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>
-    <p>Вы хотите пройти на мероприятие {{ event.event_name }}</p>
-    <p>Для этого отсканируйте сохраненный при регистрации QR-код</p>
-    <!--тут типа должен быть сканер qr -->
-    <form enctype="multipart/form-data" action="{% url 'scan' event.id %}" method="post">
+    <h1>Отсканируйте свой QR-код</h1>
+    <form enctype="multipart/form-data" action="{% url 'scan' %}" method="post">
       {% csrf_token %}
       {{ form.file }}
       <input type="submit" value="Submit">
-  </form>
-    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    </form>
+    <p>{{ error }}</p>
   </body>
 </html>

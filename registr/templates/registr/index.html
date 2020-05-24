@@ -3,17 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Home page</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'registr/css/index.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>
-    {% if event_list %}
-      <p>Прив, выбери мероприятие:</p>
+      <div class="rectangle">
+        <h1>Добро пожаловать в приложение ???</h1>
+        <p>Это приложение для регистрации на мероприятия</p>
+      </div>
       <ul>
-      {% for event in event_list %}
-          <li><a href="{% url 'choice' event.id %}">{{ event.event_name }}</a></li>
-      {% endfor %}
+          <li class="button"><a href="{% url 'choice' %}">Зарегистрироваться на мероприятие</a></li>
+          <li class="button"><a href="{% url 'scan' %}">Отсканировать<br>QR-код</a></li>
       </ul>
-    {% else %}
-      <p>No polls are available.</p>
-    {% endif %}
-  </body>
+    </body>
 </html>

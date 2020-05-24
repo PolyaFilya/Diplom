@@ -1,0 +1,107 @@
+h1, p, ul,li {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    }
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background:rgba(81,83,77,0.5);
+    background-image: url(image/Home_page.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+    line-height: 100%;
+}
+
+
+.rectangle {
+    width: 100%;
+    max-width: 63%;
+    margin: 3% auto;
+
+    background: rgba(255, 254, 230, 0.9);
+    padding: 3.5% 6%;
+}
+
+h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.5em;
+    line-height: 1.2em;
+    text-align: center;
+    word-wrap: break-word;
+
+    margin-bottom: 9%;
+
+    color: #F8CF2C;
+}
+
+p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2em;
+    line-height: 1.5em;
+    text-align: center;
+
+    color: #252827;
+
+    margin-bottom: 3.5%;
+}
+
+ul {
+    width: 70%;
+    margin: 5% auto;
+}
+
+.button {
+    display: block;
+    width: 40%; 
+    height: 70px;
+    float: left;
+    background-color: #FCD643;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.5);
+   
+}
+
+li {
+    margin: auto auto;
+    text-align: center;
+    
+}
+
+.button:last-child {
+    float: right;
+}
+
+a {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    padding: 1px;
+    word-wrap: break-word;
+
+    
+    color: #252827;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+

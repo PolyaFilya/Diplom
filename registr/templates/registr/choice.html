@@ -2,13 +2,23 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Choice</title>
+    <title>choice</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'registr/css/choice.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>
-    <p>Вы хотите зарегаться на мероприятие {{ event_name }}</p>
-    <ul>
-        <li><a href="{% url 'new_user' event_id %}">Получить QR</a></li>
-        <li><a href="{% url 'scan' event_id %}">Отсканировать</a></li>
-    </ul>
+    {% if event_list %}
+    <div class="rectangle">
+      <h1>Список доступных мероприятий:</h1>
+      <ul>
+      {% for event in event_list %}
+          <li><a href="{% url 'new_user' event.id %}">{{ event.event_name }}</a></li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No polls are available.</p>
+    </div>
+    {% endif %}
   </body>
 </html>

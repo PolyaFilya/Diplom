@@ -3,9 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Registration!</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'registr/css/user_here.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>
-    <p>Добрый день, {{ first_name }}, можете проходить!</p>
-    <a href="{% url 'index' %}">Вернуться на главную</a>
+    <h1>Проходите!</h1>
+    <p>{{ first_name }}, ваш QR код успешно отсканирован, можете проходить)</p>
+    <a href="{% url 'index' %}">Вернуться на главную страницу</a>
   </body>
 </html>
