@@ -8,8 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Проходите!</h1>
-    <p>{{ first_name }}, ваш QR код успешно отсканирован, можете проходить)</p>
-    <a href="{% url 'index' %}">Вернуться на главную страницу</a>
+    <div class="container">
+      <h1>Проходите!</h1>
+      <p>{{ first_name }}, ваш QR код успешно отсканирован, можете проходить)</p>
+      <a href="{% url 'index' %}">Вернуться на главную страницу</a>
+    </div>
   </body>
 </html>

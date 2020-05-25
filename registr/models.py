@@ -2,11 +2,12 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from datetime import datetime
 
 class Event(models.Model):
     event_name = models.CharField(max_length=100)
     address = models.CharField(max_length=250)
-    event_date = models.DateTimeField(default=timezone.now())
+    event_date = models.DateTimeField(auto_now=False)
     def __str__(self):
         return self.event_name
 

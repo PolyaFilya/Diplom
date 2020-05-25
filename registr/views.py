@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.utils import timezone
+from datetime import date
+from datetime import time
+from datetime import datetime
 
 from .qr import make_qr_code
 from .scanner import scanner
@@ -37,9 +40,12 @@ def reg_done(request, user_id):
         user = User.objects.latest('id')
         first_name = user.first_name
         event = Event.objects.get(id=user.event_id)
+        event_date = event.event_date
+        date = event_date.date()
+        time = event_date.time()
     except User.DoesNotExist:
         raise Http404("User does not exist")
-    return render(request, 'registr/reg_done.html', { 'first_name': first_name, 'event': event, 'user': user,})
+    return render(request, 'registr/reg_done.html', { 'first_name': first_name, 'event': event, 'user': user, 'date': date, 'time': time, })
 
 def qr(request, user_id):
     qr = make_qr_code(user_id)
@@ -59,18 +65,18 @@ def scan(request):
             user_id = scanner('registr/files/qrs/qr.png')
             who = User.objects.get(pk=user_id)
             s = who.state_set.count()
-            #if s == 1:
-            user = User.objects.get(pk=user_id)
-            user.state_set.create(name_state="here", user_id=user.id, reg_time=timezone.now())
-            qr.file.delete()
-            qr.delete()
-            return HttpResponseRedirect(reverse('user_here', args=(user_id, )))
-        else:
-            form = QRForm()
-                #error = 'Этот человек уже прошел'
-                #qr.file.delete()
-                #qr.delete()
-                #return render(request, 'registr/scan.html', {'form': form, 'error': error})
+            if s == 1:
+                user = User.objects.get(pk=user_id)
+                user.state_set.create(name_state="here", user_id=user.id, reg_time=timezone.now())
+                qr.file.delete()
+                qr.delete()
+                return HttpResponseRedirect(reverse('user_here', args=(user_id, )))      
+            else:
+                form = QRForm()
+                error = 'Этот человек уже прошел'
+                qr.file.delete()
+                qr.delete()
+                return render(request, 'registr/scan.html', {'form': form, 'error': error})
     else:
         form = QRForm()
 

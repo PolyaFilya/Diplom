@@ -8,12 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Отсканируйте свой QR-код</h1>
-    <form enctype="multipart/form-data" action="{% url 'scan' %}" method="post">
-      {% csrf_token %}
-      {{ form.file }}
-      <input type="submit" value="Submit">
-    </form>
-    <p>{{ error }}</p>
+    <div class="rectangle">
+      <h1>Отсканируйте свой QR-код</h1>
+      <form enctype="multipart/form-data" action="{% url 'scan' %}" method="post">
+        {% csrf_token %}
+        {{ form.file }}
+        <input type="submit" value="Сканировать">
+      </form>
+      <p>{{ error }}</p>
+    </div>
   </body>
 </html>

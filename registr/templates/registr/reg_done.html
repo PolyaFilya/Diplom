@@ -8,11 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>{{first_name}}, вы успешно зарегистрированы</h1>
-    <img src="{% url 'qr' user.id %}" alt="QR">
-    <p>Мероприятие состоится {{ event.event_date }} в {{ event.event_date }} и будет проходить по адресу {{ event.address }}</p>
-    <p>Для того, что пройти на мероприятие вы должны предъявить билет, который является QR-кодом. Свой индивидуальный QR-код вы можете скачать по ссылке ниже или сделать скриншот экрана</p>
-    <p><a href="{% url 'qr' user.id %}">Cкачать QR-код</a></p>
-    <a href="{% url 'index' %}">Вернуться на главную страницу</a>
+    <div class="rectangle">
+      <h1>{{first_name}}, вы успешно зарегистрированы</h1>
+      <img src="{% url 'qr' user.id %}" alt="QR">
+      <div class="info">
+        <p>Мероприятие состоится {{ date }} в {{ time }} и будет проходить по адресу {{ event.address }}</p>
+        <p>Для того, что пройти на мероприятие вы должны предъявить билет, который является QR-кодом. Свой индивидуальный QR-код вы можете скачать по ссылке ниже или сделать скриншот экрана</p>
+        <div class="button"><a href="{% url 'qr' user.id %}" class="save">Cкачать QR-код</a></div>
+        <a href="{% url 'index' %}" class="back">Вернуться на главную страницу</a>
+      </div>
+    </div>
   </body>
 </html>

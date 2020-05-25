@@ -19,3 +19,45 @@ body {
     line-height: 100%;
 }
 
+.container {
+    margin-left: 43%;
+    width: 100%;
+    max-width: 57%;
+    text-align: center;
+    margin-top: 20%;
+}
+
+h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3em;
+    line-height: 1em;
+    text-align: center;
+    margin-bottom: 5%;
+
+    color: #1C1D1F;
+}
+
+p {
+    text-align: center;
+    font-size: 1.7em;
+    line-height: 1.3em;
+    color: #1C1D1F;
+    margin-bottom: 3%;
+}
+
+a {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.4em;
+    line-height: 1.5em;
+    text-align: center;
+
+    color: #1C1D1F;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: none;
+}

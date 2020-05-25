@@ -1,0 +1,94 @@
+h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #FCD643 url(image/Scan.png) no-repeat;
+    background-size: cover;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+    line-height: 100%;
+}
+
+.rectangle {
+    display: block;
+    width: 100%;
+    max-width: 83%;
+    height: 600px;
+    max-height: 100%;
+    margin: 5% auto;
+    background: url(image/rectangle2.png);
+    background-size: cover;
+    padding: 100px auto;
+}
+
+h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.5em;
+    line-height: 1.5em;
+
+    text-align: center;
+
+    color: #1C1D1F;
+
+    padding-top: 7%;
+    margin-bottom: 7%;
+}
+
+input[type='file'] {
+    display: block;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5em;
+    line-height: 1em;
+    margin: 0 33%;
+}
+
+input[type='submit'] {
+    display: block;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5em;
+    line-height: 1em;
+    align-items: center;
+    text-align: center;
+    word-wrap: break-word;
+    margin: 3% auto;
+
+    color: #FFFEE6;
+    background: #4F5050;
+
+    width: 30%;
+    height: 70px;
+    padding: 1px auto;
+    border: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+input[type='submit']:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5em;
+    line-height: 1.5em;
+
+    text-align: center;
+
+    color: #1C1D1F;
+}

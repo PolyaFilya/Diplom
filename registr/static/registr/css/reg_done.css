@@ -1,0 +1,115 @@
+h1, h2, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    }
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #FFFEE6 url(image/User_done.png) no-repeat;
+    background-size: cover;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+    line-height: 100%;
+}
+
+.rectangle {
+    display: block;
+    width: 100%;
+    max-width: 83%;
+    height: 600px;
+    max-height: 100%;
+    margin: 5% auto;
+    background: #FFFEE6;
+    border: 10px solid #252827;
+    box-sizing: border-box;
+    padding: 100px auto;
+}
+
+h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    width: 80%;
+    font-size: 3em;
+    line-height: 1em;
+    text-align: center;
+    margin: 3% auto;
+
+    color: #333433;
+    word-wrap: break-word;
+}
+
+img {
+    display: block;
+    float: left;
+    margin-left: 5%;
+    margin-right: 8%;
+}
+
+.info {
+    width: 100%;
+    max-width: 90%;
+    margin: 5% auto;
+}
+
+p {
+    width: 90%;
+    margin: 3% auto;
+    font-size: 1.2em;
+    line-height: 1.1em;
+    color: #60615B;
+}
+
+.button {
+    display: inline-block;
+    width: 25%; 
+    height: 60px;
+    background-color: #FCD643;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    text-align: center;
+    margin-left: 17%;
+    margin-bottom: 2%;
+}
+
+.save {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.3em;
+    line-height: 3em;
+    padding: 1px;
+    word-wrap: break-word;
+
+    
+    color: #1C1D1F;
+}
+.save:hover {
+    text-decoration: underline;
+}
+
+.back {
+    display: inline-block;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2em;
+    line-height: 1.5em;
+
+    color: #60615B;
+    margin-left: 15%;
+    text-decoration: underline;
+}
+.back:hover {
+    text-decoration: none;
+}
