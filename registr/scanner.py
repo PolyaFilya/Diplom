@@ -6,5 +6,6 @@ def scanner(object):
     data = image[0].data
     print(data)
     data = str(data)
-    n = int(data[2:4])
+    c = len(data)
+    n = int(data[2:c-1])
     return n
