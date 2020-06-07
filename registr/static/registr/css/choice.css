@@ -16,6 +16,7 @@ body {
     padding: 0;
     background: rgba(255, 254, 230) url(image/Choice.png) no-repeat;
     background-size: cover;
+    height: 100vh;
 
     font-family: 'Montserrat', sans-serif;
     font-size: 100%;
@@ -75,4 +76,28 @@ a {
 a:hover {
     text-decoration: underline;
     text-decoration-color: #FCD643;
+}
+
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    h1 { margin: 5% auto; }
+    li { margin: 15% auto; }
+    .rectangle { margin: 15% auto; height: 1000px; }
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    body { font-size: 70%;}
+    .rectangle { margin: 15% auto; height: 600px; }
+    h1 { margin: 10% auto; }
+    li { margin: 15% auto; }
+}
+
+@media screen and (max-width: 375px) and (orientation: portrait) {
+    body { font-size: 60%;}
+    .rectangle { margin: 15% auto; height: 600px; }
+}
+
+@media screen and (max-width: 320px) and (orientation: portrait) {
+    body { font-size: 50%;}
+    .rectangle { margin: 15% auto; height: 500px; }
 }

@@ -17,6 +17,7 @@ body {
     padding: 0;
     background: #FDDE64 url(image/New_user.png) no-repeat;
     background-size: cover;
+    height: 100vh;
 
     font-family: 'Montserrat', sans-serif;
     font-size: 100%;
@@ -116,7 +117,7 @@ form label {
 input[type='text'], input[type='email'], input[type='number'] {
     border: none;
     border-bottom: 2px solid #60615B;
-    height: 30px;
+    height: 40px;
     width: 80%;
     background: rgba(255, 255, 255, 0.5);
     font-size: 1em;
@@ -153,4 +154,37 @@ input[type='checkbox'] {
 }
 .can {
     margin-left: 2%;
+}
+
+
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    body { font-size: 80%;}
+    .rectangle { margin: 15% auto; height: 1000px;}
+    h2 { margin-bottom: 10%; }
+    .attention { margin: 5% 14%;  display: inline; } 
+    .form { max-width: 80%; margin: 10% 10%; display: inline-block; float: none; }
+    .button { margin: 0; }
+    input { margin-bottom: 5%; }
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    body { font-size: 70%;}
+    .rectangle { margin: 15% auto; height: 800px; }
+    .attention { font-size: 1.6em; margin: 5% 16%; }
+    input[type="submit"] { width: 70%; }
+}
+
+@media screen and (max-width: 375px) and (orientation: portrait) {
+    body { font-size: 60%;}
+    .rectangle { margin: 15% auto; height: 600px; }
+    .attention { font-size: 1.2em; margin: 5% 10%; }
+    input[type="submit"] { width: 70%; }
+}
+
+@media screen and (max-width: 320px) and (orientation: portrait) {
+    body { font-size: 50%;}
+    .rectangle { margin: 15% auto; height: 500px; }
+    .attention { font-size: 1em; margin: 5% 15%; }
+    input[type="submit"] { width: 70%; }
 }

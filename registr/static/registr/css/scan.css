@@ -92,3 +92,19 @@ p {
 
     color: #1C1D1F;
 }
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+
+}
+
+@media screen and (max-width: 375px) and (orientation: portrait) {
+
+}
+
+@media screen and (max-width: 320px) and (orientation: portrait) {
+
+}

@@ -17,6 +17,7 @@ body {
     padding: 0;
     background: #FFFEE6 url(image/User_done.png) no-repeat;
     background-size: cover;
+    height: 100hv;
 
     font-family: 'Montserrat', sans-serif;
     font-size: 100%;
@@ -109,4 +110,34 @@ button:hover {
 }
 .back:hover {
     text-decoration: none;
+}
+
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    body { font-size: 80%;}
+    .rectangle { margin: 15% auto; height: 1000px; padding: 20px;}
+    img { margin: 3% 27%; }
+    .info { display: inline-block; text-align: center; margin: 3% 4%;}
+    button { width: 70%; margin: 5% auto;}
+    .back { margin-left: 0; }
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    body { font-size: 70%;}
+    .rectangle { margin: 15% auto; height: 800px; }
+    img { width: 50%; margin-left: 23%; }
+    .info { margin: 3% 3%; }
+    h1 { width: 90%;}
+}
+
+@media screen and (max-width: 375px) and (orientation: portrait) {
+    body { font-size: 60%;}
+    .rectangle { margin: 15% auto; height: 600px; }
+    h1 { font-size: 2.3em; width: 90%;}
+}
+
+@media screen and (max-width: 320px) and (orientation: portrait) {
+    body { font-size: 50%;}
+    .rectangle { margin: 15% auto; height: 500px; border: 5px solid #252827;}
+    h1 { font-size: 2em; width: 95%;}
 }

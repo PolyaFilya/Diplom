@@ -15,6 +15,7 @@ a {
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
     background:rgba(81,83,77,0.5);
     background-image: url(image/Home_page.png);
     background-repeat: no-repeat;
@@ -104,26 +105,44 @@ button:hover {
 
 @media screen and (max-width: 1024px) and (orientation: portrait) {
     li { margin: 0 5%; width: 40%;}
-    h1 { font-size: 3em; }
-    p { font-size: 1.5em; }
+    .rectangle { margin-top: 40% }
+    body { font-size: 80%;}
 }
 
 @media screen and (max-width: 768px) and (orientation: portrait) {
-    li { margin: 2% auto; width: 65%; }
+    li { margin: 10% auto; width: 80%; }
     li:first-child {
         float: none;
     }
     li:last-child {
         float: none;
     }
+    body { font-size: 70%; }
+    .rectangle { margin: 20% auto; }
+    h1 { font-size: 3em; }
 }
 
 @media screen and (max-width: 375px) and (orientation: portrait) {
-    li { margin: 2% auto; width: 70%; float: none;}
+    li { margin: 10% auto; width: 90%; float: none;}
     li:first-child {
         float: none;
     }
     li:last-child {
         float: none;
     }
+    body { font-size: 60%;}
+    .rectangle { margin: 20% auto; }
+    h1 { font-size: 3em; }
+}
+
+@media screen and (max-width: 320px) and (orientation: portrait) {
+    li { margin: 10% auto; width: 90%; float: none;}
+    li:first-child {
+        float: none;
+    }
+    li:last-child {
+        float: none;
+    }
+    .rectangle { margin: 15% auto; }
+    body { font-size: 50%;}
 }
