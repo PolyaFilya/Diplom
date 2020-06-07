@@ -14,7 +14,7 @@
       <div class="info">
         <p>Мероприятие состоится {{ date }} в {{ time }} и будет проходить по адресу {{ event.address }}</p>
         <p>Для того, что пройти на мероприятие вы должны предъявить билет, который является QR-кодом. Свой индивидуальный QR-код вы можете скачать по ссылке ниже или сделать скриншот экрана</p>
-        <div class="button"><a href="{% url 'qr' user.id %}" class="save">Cкачать QR-код</a></div>
+        <button><a href="{% url 'qr' user.id %}" class="save">Cкачать QR-код</a></button>
         <a href="{% url 'index' %}" class="back">Вернуться на главную страницу</a>
       </div>
     </div>

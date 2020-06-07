@@ -71,34 +71,31 @@ p {
     color: #60615B;
 }
 
-.button {
-    display: inline-block;
-    width: 25%; 
-    height: 60px;
-    background-color: #FCD643;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    text-align: center;
-    margin-left: 17%;
-    margin-bottom: 2%;
-}
-
-.save {
+button {
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
     font-size: 1.3em;
-    line-height: 3em;
-    padding: 1px;
-    word-wrap: break-word;
+    line-height: 1em;
+    text-align: center;
+    width: 25%;
+    height: 60px;
+    margin: 0 17%;
 
-    
-    color: #1C1D1F;
+
+    background: #FCD643;
+    border: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);   
 }
-.save:hover {
+
+button:hover {
     text-decoration: underline;
 }
-
+.save {
+    color: #1C1D1F;
+}
 .back {
+    margin-top: 2%;
     display: inline-block;
     font-family: Montserrat;
     font-style: normal;

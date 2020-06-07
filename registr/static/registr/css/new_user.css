@@ -113,7 +113,7 @@ form label {
     word-wrap: break-word;
 }
 
-input[type='text'], input[type='email'] {
+input[type='text'], input[type='email'], input[type='number'] {
     border: none;
     border-bottom: 2px solid #60615B;
     height: 30px;
@@ -127,12 +127,9 @@ input[type='submit'] {
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
-    font-size: 1.1em;
+    font-size: 1.3em;
     line-height: 1em;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    word-wrap: break-word;
+    padding: 0 auto;
 
     color: #1C1D1F;
     background: rgba(252, 214, 67, 0.9);
