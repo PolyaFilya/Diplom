@@ -11,9 +11,10 @@ a {
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
     background: #FFFEE6 url(image/Scan.png) no-repeat;
     background-size: cover;
-
+    
     font-family: 'Montserrat', sans-serif;
     font-size: 100%;
     line-height: 100%;
@@ -94,17 +95,28 @@ p {
 }
 
 @media screen and (max-width: 1024px) and (orientation: portrait) {
-
+    body { font-size: 80%;}
+    .rectangle { margin: 15% auto;  height: 1000px; padding: 20px;}
+    h1 {margin: 15%;}
+    input[type='file'] {margin: 5% auto;}
+    input[type='submit'] {margin: 10% auto;}
+    p {font-size: 2em;}
 }
 
 @media screen and (max-width: 768px) and (orientation: portrait) {
-
+    body { font-size: 70%;}
+    .rectangle { margin: 15% auto; max-width: 80%; height: 80vh;}
+    h1 {font-size: 2.5em; padding: 0; margin: 20% auto;}
+    input[type='file'] {margin: 10% auto;}
+    input[type='submit'] {margin: 20% auto; width: 60%;}
 }
 
 @media screen and (max-width: 375px) and (orientation: portrait) {
-
+    body { font-size: 60%;}
+    .rectangle { margin: 15% auto; }
 }
 
 @media screen and (max-width: 320px) and (orientation: portrait) {
-
+    body { font-size: 50%;}
+    .rectangle { margin: 15% auto;}
 }

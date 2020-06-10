@@ -13,6 +13,7 @@ body {
     padding: 0;
     background: #FCD643 url(image/User_here.png) no-repeat;
     background-size: cover;
+    height: 100vh;
 
     font-family: 'Montserrat', sans-serif;
     font-size: 100%;
@@ -60,4 +61,28 @@ a {
 }
 a:hover {
     text-decoration: none;
+}
+
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    body {background: url(image/fon4.png) no-repeat #FCD643; background-size: contain; background-position-y: bottom;}
+    .container {padding-top: 68%;}
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    body { font-size: 70%; background-position-y: bottom;}
+}
+
+@media screen and (max-width: 414px) and (orientation: portrait) {
+    body { font-size: 50%; background-position-y: bottom;}
+    .container {margin-left: 45%; padding-top: 98%;}
+}
+
+@media screen and (max-width: 375px) and (orientation: portrait) {
+    body { font-size: 50%; background-size: contain; background-position-y: 368px;}
+    .container {margin-left: 37%; padding-top: 55%;}
+}
+
+@media screen and (max-width: 320px) and (orientation: portrait) {
+    body { font-size: 40%;}
 }
