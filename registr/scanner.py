@@ -7,5 +7,8 @@ def scanner(object):
     print(data)
     data = str(data)
     c = len(data)
-    n = int(data[2:c-1])
-    return n
+    try:
+        n = int(data[2:c-1])
+        return n
+    except:
+        return data

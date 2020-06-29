@@ -5,6 +5,7 @@ from django.utils import timezone
 from datetime import date
 from datetime import time
 from datetime import datetime
+from django.core.exceptions import ObjectDoesNotExist
 
 from .qr import make_qr_code
 from .scanner import scanner
@@ -63,8 +64,30 @@ def scan(request):
                 qr = QR()
                 qr.file = form.cleaned_data["file"]
                 qr.file.save('qr.png', content=qr.file, save=True)
-                user_id = scanner('registr/files/qrs/qr.png')
-                who = User.objects.get(pk=user_id)
+                try:
+                    user_id = scanner('registr/files/qrs/qr.png')
+                    if type(user_id) == int:
+                        if (user_id <= User.objects.latest('id').id):
+                            who = User.objects.get(pk=user_id)
+                        else:
+                            form = QRForm()
+                            error = 'Неправильный QR-код'
+                            qr.file.delete()
+                            qr.delete()
+                            return render(request, 'registr/scan.html', {'form': form, 'error': error})
+                    else:
+                        form = QRForm()
+                        error = 'Неправильный QR-код'
+                        qr.file.delete()
+                        qr.delete()
+                        return render(request, 'registr/scan.html', {'form': form, 'error': error})
+                except ValueError:
+                    form = QRForm()
+                    error = 'Неправильный QR-код'
+                    qr.file.delete()
+                    qr.delete()
+                    return render(request, 'registr/scan.html', {'form': form, 'error': error})
+                
                 s = who.state_set.count()
                 if s == 1:
                     user = User.objects.get(pk=user_id)
@@ -79,7 +102,7 @@ def scan(request):
                     qr.delete()
                     return render(request, 'registr/scan.html', {'form': form, 'error': error})
         except IndexError:   
-            error = 'Выберите QR-код'
+            error = 'Это не QR-код'
             qr.file.delete()
             qr.delete()
             return render(request, 'registr/scan.html', {'form': form, 'error': error})
